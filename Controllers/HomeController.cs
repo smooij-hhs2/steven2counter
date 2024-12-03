@@ -7,6 +7,7 @@ namespace steven2counter.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private static int counter = 0;
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -15,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+	counter += 1;
+        return View(counter);
     }
 
     public IActionResult Privacy()
